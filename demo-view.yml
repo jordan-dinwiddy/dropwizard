@@ -1,0 +1,34 @@
+template: Hello, %s!
+defaultName: Stranger
+
+# We do this so that we can host our assets out of the / path
+http:
+  rootPath: /service/*  # Default is /*
+  
+# Set up logging to a file
+logging:
+
+  # ...
+  # Settings for logging to a file.
+  file:
+
+    # If true, write log statements to a file.
+    enabled: true
+
+    # Do not write log statements below this threshold to the file.
+    threshold: INFO
+
+    # The file to which current statements will be logged.
+    currentLogFilename: ./logs/demo-view.log
+
+    # When the log file rotates, the archived log will be renamed to this and gzipped. The
+    # %d is replaced with the previous day (yyyy-MM-dd). Custom rolling windows can be created
+    # by passing a SimpleDateFormat-compatible format as an argument: "%d{yyyy-MM-dd-hh}".
+    archivedLogFilenamePattern: ./logs/demo-view-%d.log.gz
+
+    # The number of archived files to keep.
+    archivedFileCount: 5
+
+    # The timezone used to format dates. HINT: USE THE DEFAULT, UTC.
+    timeZone: UTC
+ 
