@@ -23,7 +23,7 @@ public class DemoViewService extends Service<DemoViewConfiguration> {
     	LOGGER.info("Initing...");	// This doesn't get logged (I guess the logging service gets initialized late)
     	
     	bootstrap.setName("demo-view");
-        bootstrap.addBundle(new AssetsBundle("/assets/", "/"));
+        bootstrap.addBundle(new AssetsBundle("/assets/", "/assets/"));
         bootstrap.addBundle(new ViewBundle());
     }
 
@@ -32,5 +32,6 @@ public class DemoViewService extends Service<DemoViewConfiguration> {
         
     	LOGGER.info("run()...");	// This does get logged
     	environment.addResource(new PersonResource());
+    	environment.addResource(new RootResource());
     }
 }

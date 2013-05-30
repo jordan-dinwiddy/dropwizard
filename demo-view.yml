@@ -2,8 +2,8 @@ template: Hello, %s!
 defaultName: Stranger
 
 # We do this so that we can host our assets out of the / path
-http:
-  rootPath: /service/*  # Default is /*
+#http:
+ #rootPath: /service/*  # Default is /*
   
 # Set up logging to a file
 logging:
